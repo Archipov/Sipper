@@ -22,7 +22,7 @@ Importing the android-support-v7-appcompat project can be done  like so:
 - Browse to the android-support-v7-appcompat location. This should be in <ADT location>\sdk\extras\android\support\v7\appcompat
 
 Importing the android-ngn-stack project can be done like so:
-- Move or copy the android-ngn-stack folder out of the Sipper folder. Place it in the same folder as the Sipper folder.
+- Move or copy the android-ngn-stack folder out of the Sipper folder. Place it in the same folder that the Sipper folder is in.
 - In Eclipse, Select File -> Import -> Android -> Existing Android Code Into Workspace.
 - Browse to the android-ngn-stack location.
 
