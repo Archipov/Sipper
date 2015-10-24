@@ -45,40 +45,52 @@
 * with this program; if not, write to the Free Software Foundation, Inc., 
 * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.example.sipper;
+package com.dermotblair.sipper;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.widget.Toast;
+import android.util.Log;
 
-/*
- * Commonly used functions unrelated to the SIP library.
- */
-public class Utilities {
-	
-	private static Toast toast;
-
-	public static void toast(Context context, String message, boolean longDuration)
-	{
-		if (toast != null)
-			toast.cancel();
-
-		toast = Toast.makeText(context, message, (longDuration ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT ));
-		toast.show();
-	}
-	
-	public static boolean isNetworkAvailable(Context context) {
-	    ConnectivityManager connectivityManager 
-	          = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-	    NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-	    return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-	}
-	
-	public static boolean isStringNullOrEmpty(String str)
-	{
-		if(str != null && !"".equals(str.trim()))
-			return true;
-		return false;
-	}
+public class Logger 
+{
+    private static final boolean DEBUG = true; // TODO: if releasing app, set this to false.
+     
+    public static void d(String tag, String msg) 
+    {
+        /*if (Log.isLoggable(TAG, Log.DEBUG)) 
+        {
+            Log.d(TAG, className + "." + msg);
+        }*/
+    	
+    	if(DEBUG)
+    		Log.d(tag, msg);
+    }
+    
+    public static void i(String tag, String msg) 
+    {
+    	if(DEBUG)
+    		Log.i(tag, msg);
+    }
+    
+    public static void w(String tag, String msg) 
+    {
+    	if(DEBUG)
+    		Log.w(tag, msg);
+    }
+    
+    public static void w(String tag, String msg, Throwable exception) 
+    {
+    	if(DEBUG)
+    		Log.w(tag, msg, exception);
+    }
+    
+    public static void e(String tag, String msg) 
+    {
+    	if(DEBUG)
+    		Log.e(tag, msg);
+    }  
+    
+    public static void e(String tag, String msg, Throwable exception) 
+    {
+    	if(DEBUG)
+    		Log.e(tag, msg, exception);
+    }  
 }

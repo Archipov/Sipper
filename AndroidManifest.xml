@@ -49,7 +49,7 @@
 */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sipper"
+    package="com.dermotblair.sipper"
     android:versionCode="1"
     android:versionName="1.0" >
     
@@ -84,7 +84,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" android:name="org.doubango.ngn.NgnApplication">
         <activity
-            android:name=".MainActivity"
+            android:name="com.dermotblair.sipper.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -92,16 +92,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CallActivity"
+            android:name="com.dermotblair.sipper.CallActivity"
             android:label="@string/app_name"
             android:launchMode="singleInstance" >
         </activity>
         <activity
-            android:name=".DialerActivity"
+            android:name="com.dermotblair.sipper.DialerActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".AddAccountActivity"
+            android:name="com.dermotblair.sipper.AddAccountActivity"
             android:label="@string/app_name" >
         </activity>
     </application>

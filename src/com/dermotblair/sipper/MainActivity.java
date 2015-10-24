@@ -45,12 +45,14 @@
 * with this program; if not, write to the Free Software Foundation, Inc., 
 * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.example.sipper;
+package com.dermotblair.sipper;
 
 import org.doubango.ngn.NgnEngine;
 import org.doubango.ngn.events.NgnInviteEventArgs;
 import org.doubango.ngn.events.NgnRegistrationEventArgs;
 import org.doubango.ngn.services.INgnSipService;
+
+import com.dermotblair.sipper.R;
 
 import android.app.Activity;
 import android.content.Intent;

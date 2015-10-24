@@ -45,7 +45,7 @@
 * with this program; if not, write to the Free Software Foundation, Inc., 
 * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.example.sipper;
+package com.dermotblair.sipper;
 
 import org.doubango.ngn.NgnApplication;
 import org.doubango.ngn.NgnEngine;
@@ -54,8 +54,8 @@ import org.doubango.ngn.events.NgnInviteEventArgs;
 import org.doubango.ngn.sip.NgnAVSession;
 import org.doubango.ngn.sip.NgnInviteSession.InviteState;
 
-import com.example.sipper.callmanagement.Call;
-import com.example.sipper.callmanagement.CallManager;
+import com.dermotblair.sipper.callmanagement.Call;
+import com.dermotblair.sipper.callmanagement.CallManager;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

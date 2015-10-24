@@ -45,51 +45,40 @@
 * with this program; if not, write to the Free Software Foundation, Inc., 
 * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.example.sipper;
+package com.dermotblair.sipper;
 
-import org.doubango.ngn.events.NgnEventArgs;
-import org.doubango.ngn.events.NgnRegistrationEventArgs;
-
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.widget.Toast;
 
-public class RegistrationBroadcastReceiver extends BroadcastReceiver {
-
-	 private static final String CLASS_NAME = RegistrationBroadcastReceiver.class.getCanonicalName();
+/*
+ * Commonly used functions unrelated to the SIP library.
+ */
+public class Utilities {
 	
-	  @Override
-	  public void onReceive(Context context, Intent intent) {
-	    final String action = intent.getAction();
-	    // Registration Event
-	    if(NgnRegistrationEventArgs.ACTION_REGISTRATION_EVENT.equals(action)){
-	      NgnRegistrationEventArgs args = intent.getParcelableExtra(NgnEventArgs.EXTRA_EMBEDDED);
-	      if(args == null){
-	        Logger.d("DEBUG", "Invalid event args");
-	        return;
-	      }
-	      switch(args.getEventType()){
-	        case REGISTRATION_NOK:
-	          Logger.d(CLASS_NAME, "Failed to register.");
-	          break;
-	        case UNREGISTRATION_OK:
-	          Logger.d(CLASS_NAME, "You are now unregistered.");
-	          break;
-	        case REGISTRATION_OK:
-	          Logger.d(CLASS_NAME, "You are now registered.");
-	          break;
-	        case REGISTRATION_INPROGRESS:
-	          Logger.d(CLASS_NAME, "Trying to register.");
-	          break;
-	        case UNREGISTRATION_INPROGRESS:
-	          Logger.d(CLASS_NAME, "Trying to unregister.");
-	          break;
-	        case UNREGISTRATION_NOK:
-	          Logger.d(CLASS_NAME, "Failed to unregister.");
-	          break;
-	      }
+	private static Toast toast;
 
-	    }
-	  }
+	public static void toast(Context context, String message, boolean longDuration)
+	{
+		if (toast != null)
+			toast.cancel();
+
+		toast = Toast.makeText(context, message, (longDuration ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT ));
+		toast.show();
 	}
+	
+	public static boolean isNetworkAvailable(Context context) {
+	    ConnectivityManager connectivityManager 
+	          = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+	    return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+	}
+	
+	public static boolean isStringNullOrEmpty(String str)
+	{
+		if(str != null && !"".equals(str.trim()))
+			return true;
+		return false;
+	}
+}

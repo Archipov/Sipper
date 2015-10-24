@@ -45,7 +45,7 @@
 * with this program; if not, write to the Free Software Foundation, Inc., 
 * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.example.sipper.callmanagement;
+package com.dermotblair.sipper.callmanagement;
 
 import java.util.concurrent.TimeUnit;
 
@@ -53,9 +53,9 @@ import org.doubango.ngn.sip.NgnAVSession;
 
 import android.util.Log;
 
-import com.example.sipper.CallStateReceiver;
-import com.example.sipper.Logger;
-import com.example.sipper.Utilities;
+import com.dermotblair.sipper.CallStateReceiver;
+import com.dermotblair.sipper.Logger;
+import com.dermotblair.sipper.Utilities;
 
 public class Call {
 

@@ -45,7 +45,7 @@
 * with this program; if not, write to the Free Software Foundation, Inc., 
 * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.example.sipper;
+package com.dermotblair.sipper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -56,6 +56,8 @@ import org.doubango.ngn.events.NgnRegistrationEventArgs;
 import org.doubango.ngn.services.INgnConfigurationService;
 import org.doubango.ngn.services.INgnSipService;
 import org.doubango.ngn.utils.NgnConfigurationEntry;
+
+import com.dermotblair.sipper.R;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;

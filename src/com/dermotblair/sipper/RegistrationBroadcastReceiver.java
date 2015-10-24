@@ -45,52 +45,51 @@
 * with this program; if not, write to the Free Software Foundation, Inc., 
 * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-package com.example.sipper;
+package com.dermotblair.sipper;
 
+import org.doubango.ngn.events.NgnEventArgs;
+import org.doubango.ngn.events.NgnRegistrationEventArgs;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
-public class Logger 
-{
-    private static final boolean DEBUG = true; // TODO: if releasing app, set this to false.
-     
-    public static void d(String tag, String msg) 
-    {
-        /*if (Log.isLoggable(TAG, Log.DEBUG)) 
-        {
-            Log.d(TAG, className + "." + msg);
-        }*/
-    	
-    	if(DEBUG)
-    		Log.d(tag, msg);
-    }
-    
-    public static void i(String tag, String msg) 
-    {
-    	if(DEBUG)
-    		Log.i(tag, msg);
-    }
-    
-    public static void w(String tag, String msg) 
-    {
-    	if(DEBUG)
-    		Log.w(tag, msg);
-    }
-    
-    public static void w(String tag, String msg, Throwable exception) 
-    {
-    	if(DEBUG)
-    		Log.w(tag, msg, exception);
-    }
-    
-    public static void e(String tag, String msg) 
-    {
-    	if(DEBUG)
-    		Log.e(tag, msg);
-    }  
-    
-    public static void e(String tag, String msg, Throwable exception) 
-    {
-    	if(DEBUG)
-    		Log.e(tag, msg, exception);
-    }  
-}
+public class RegistrationBroadcastReceiver extends BroadcastReceiver {
+
+	 private static final String CLASS_NAME = RegistrationBroadcastReceiver.class.getCanonicalName();
+	
+	  @Override
+	  public void onReceive(Context context, Intent intent) {
+	    final String action = intent.getAction();
+	    // Registration Event
+	    if(NgnRegistrationEventArgs.ACTION_REGISTRATION_EVENT.equals(action)){
+	      NgnRegistrationEventArgs args = intent.getParcelableExtra(NgnEventArgs.EXTRA_EMBEDDED);
+	      if(args == null){
+	        Logger.d("DEBUG", "Invalid event args");
+	        return;
+	      }
+	      switch(args.getEventType()){
+	        case REGISTRATION_NOK:
+	          Logger.d(CLASS_NAME, "Failed to register.");
+	          break;
+	        case UNREGISTRATION_OK:
+	          Logger.d(CLASS_NAME, "You are now unregistered.");
+	          break;
+	        case REGISTRATION_OK:
+	          Logger.d(CLASS_NAME, "You are now registered.");
+	          break;
+	        case REGISTRATION_INPROGRESS:
+	          Logger.d(CLASS_NAME, "Trying to register.");
+	          break;
+	        case UNREGISTRATION_INPROGRESS:
+	          Logger.d(CLASS_NAME, "Trying to unregister.");
+	          break;
+	        case UNREGISTRATION_NOK:
+	          Logger.d(CLASS_NAME, "Failed to unregister.");
+	          break;
+	      }
+
+	    }
+	  }
+	}
