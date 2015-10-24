@@ -50,8 +50,6 @@ package com.dermotblair.sipper;
 import java.util.HashMap;
 import java.util.Map;
 
-import android.util.Log;
-
 // Holds the configuration details for the user currently logged in.
 public class Config {
 

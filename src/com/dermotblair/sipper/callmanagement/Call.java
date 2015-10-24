@@ -47,13 +47,7 @@
 */
 package com.dermotblair.sipper.callmanagement;
 
-import java.util.concurrent.TimeUnit;
-
 import org.doubango.ngn.sip.NgnAVSession;
-
-import android.util.Log;
-
-import com.dermotblair.sipper.CallStateReceiver;
 import com.dermotblair.sipper.Logger;
 import com.dermotblair.sipper.Utilities;
 

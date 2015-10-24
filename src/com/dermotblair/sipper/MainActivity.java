@@ -51,16 +51,12 @@ import org.doubango.ngn.NgnEngine;
 import org.doubango.ngn.events.NgnInviteEventArgs;
 import org.doubango.ngn.events.NgnRegistrationEventArgs;
 import org.doubango.ngn.services.INgnSipService;
-
 import com.dermotblair.sipper.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends Activity{
 
@@ -124,7 +120,6 @@ public class MainActivity extends Activity{
 		unregisterReceiver(callStateReceiver);
 		
 		// TODO stop engine if required. Stopping engine stops all services.
-		
 	}
 	
 	public void onClick(View view)

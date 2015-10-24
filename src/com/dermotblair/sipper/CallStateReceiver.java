@@ -56,11 +56,9 @@ import org.doubango.ngn.sip.NgnInviteSession.InviteState;
 
 import com.dermotblair.sipper.callmanagement.Call;
 import com.dermotblair.sipper.callmanagement.CallManager;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 public class CallStateReceiver extends BroadcastReceiver {
 	
@@ -146,16 +144,14 @@ public class CallStateReceiver extends BroadcastReceiver {
 	        	break;
 	        	 	
 	        case REMOTE_RINGING:
-	        	// Don't seem to ever get this state in an outgoing call.
+	        	// Does not seem to ever get this state in an outgoing call.
 	        	// It goes straight from INPROGRESS TO INCALL.
 	        	break;
 	        	
 	        case EARLY_MEDIA:
-
 	        	break;
 	        	
 	        case TERMINATING:
-
 	        	break;
 	      }
 	      
@@ -170,5 +166,4 @@ public class CallStateReceiver extends BroadcastReceiver {
 		  //intent.putExtra(NgnInviteEventArgs.EXTRA_SIPCODE, 0);
 		  NgnApplication.getContext().sendBroadcast(intent);
 	  }*/
-
 	}

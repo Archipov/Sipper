@@ -48,9 +48,7 @@
 package com.dermotblair.sipper.callmanagement;
 
 import com.dermotblair.sipper.Logger;
-
 import android.support.v4.util.LongSparseArray;
-import android.util.Log;
 
 public class CallManager {
 

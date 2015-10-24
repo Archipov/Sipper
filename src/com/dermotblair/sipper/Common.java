@@ -71,7 +71,7 @@ public class Common {
 	private static void initEngineAndSipService()
 	{
 		Logger.d(CLASS_NAME, "initEngineAndSipService() entered.");
-		// Get engines
+		
 		mEngine = NgnEngine.getInstance();
 		mSipService = mEngine.getSipService();
 	}
@@ -142,7 +142,6 @@ public class Common {
 				Logger.e(CLASS_NAME, "attemptRegisterationOnStartup() - failed, startNgNEngine returned false.");
 				return false;
 			}
-			
 		}
 		else
 		{
@@ -221,7 +220,6 @@ public class Common {
 			Logger.e(CLASS_NAME, "checkIfSipAccountAvailable() - returning false as Config.setAccountDetails() returned false.");
 			return false;
 		}
-
 	}
 	
 	/*

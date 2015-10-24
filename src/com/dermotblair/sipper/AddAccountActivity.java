@@ -46,31 +46,18 @@
 * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 package com.dermotblair.sipper;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import org.doubango.ngn.NgnEngine;
-import org.doubango.ngn.events.NgnInviteEventArgs;
-import org.doubango.ngn.events.NgnRegistrationEventArgs;
 import org.doubango.ngn.services.INgnConfigurationService;
-import org.doubango.ngn.services.INgnSipService;
 import org.doubango.ngn.utils.NgnConfigurationEntry;
-
 import com.dermotblair.sipper.R;
-
 import android.support.v7.app.ActionBarActivity;
-import android.app.Activity;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 public class AddAccountActivity extends ActionBarActivity {
-
-	//private NgnEngine mEngine = null;
-	//private INgnSipService mSipService = null;
 	
 	private EditText sipServerEditText;
 	private EditText serverPortEditText;
@@ -85,7 +72,6 @@ public class AddAccountActivity extends ActionBarActivity {
 	private String usernameStr;
 	private String passwordStr;
 	private String impuStr;
-	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -112,16 +98,11 @@ public class AddAccountActivity extends ActionBarActivity {
 	
 	private void init()
 	{
-		// Initialise EditTexts.
 		sipServerEditText = (EditText)findViewById(R.id.sipServerEditText);
 		serverPortEditText = (EditText)findViewById(R.id.serverPortEditText);
 		domainEditText = (EditText)findViewById(R.id.domainEditText);
 		usernameEditText = (EditText)findViewById(R.id.usernameEditText);
 		passwordEditText = (EditText)findViewById(R.id.passwordEditText);
-		
-		// Get engines
-		//mEngine = NgnEngine.getInstance();
-		//mSipService = mEngine.getSipService();
 	}
 	
 	/*
@@ -168,8 +149,6 @@ public class AddAccountActivity extends ActionBarActivity {
 		return true;
 	}
 	
-	
-	
 	public void onClick(View view)
 	{
 		switch(view.getId())
@@ -193,19 +172,6 @@ public class AddAccountActivity extends ActionBarActivity {
 					}
 				}
 			break;
-			case R.id.dermotTestingButton:
-				// TODO: Remove this code. Just using it while developing to populate my account details into the form.
-				if(sipServerEditText != null)
-					sipServerEditText.setText("freespeech.ie");
-				if(serverPortEditText != null)
-					serverPortEditText.setText("5060");
-				if(domainEditText != null)
-					domainEditText.setText("freespeech.ie");
-				if(usernameEditText != null)
-					usernameEditText.setText("6692531");
-				if(passwordEditText != null)
-					passwordEditText.setText("4d3afe13");
-			break;
 			case R.id.cancelButton:
 				finish();
 			break;
@@ -217,7 +183,6 @@ public class AddAccountActivity extends ActionBarActivity {
 	 */
 	private boolean saveAccountDetailsFromFrom()
 	{
-		// Capture account details from form.
 		// TODO: validate sip server and domain. e.g. using regex.
 		String sipServerStr = sipServerEditText.getText().toString().trim();
 		String serverPortStr = serverPortEditText.getText().toString().trim();

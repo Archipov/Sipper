@@ -49,19 +49,14 @@ package com.dermotblair.sipper;
 
 import org.doubango.ngn.NgnEngine;
 import org.doubango.ngn.media.NgnMediaType;
-import org.doubango.ngn.services.INgnSipService;
 import org.doubango.ngn.sip.NgnAVSession;
 import org.doubango.ngn.utils.NgnUriUtils;
-
 import com.dermotblair.sipper.R;
 import com.dermotblair.sipper.callmanagement.Call;
 import com.dermotblair.sipper.callmanagement.CallManager;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 

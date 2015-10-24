@@ -183,13 +183,6 @@
             android:id="@+id/dermotTestingTableRow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-            <Button
-		        android:id="@+id/dermotTestingButton"
-		        android:layout_width="0dp"
-		        android:layout_weight="2"
-		        android:layout_height="wrap_content"
-		        android:text="Dermot Test: get acc details"
-		        android:onClick="onClick" />
         </TableRow>
         
     </TableLayout>
